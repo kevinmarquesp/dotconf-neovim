@@ -4,6 +4,10 @@
 set clipboard^=unnamed,unnamedplus
 set termguicolors encoding=UTF-8
 
+if !has("nvim")
+    set term=xterm-256color
+endif
+
 set path+=**
 set path-=**/node_modules/**
 
@@ -36,7 +40,7 @@ endif
 "" ----------------------------------------------------------------------------
 
 set number relativenumber
-set cursorline
+set nowrap cursorline
 
 set wildmenu
 set colorcolumn=80

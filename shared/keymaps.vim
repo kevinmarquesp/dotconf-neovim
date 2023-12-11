@@ -54,8 +54,6 @@ nnoremap <down> :resize -1<cr>
 nnoremap <up> :resize +1<cr>
 nnoremap <right> :vertical resize -1<cr>
 
-nnoremap <leader>n :Ex<cr>
-
 if has("nvim")
     nnoremap <leader>t :split<cr>:set nonu nornu<cr>:term fish<cr>a
 else
@@ -67,6 +65,7 @@ endif
 "" ----------------------------------------------------------------------------
 
 nnoremap <c-p> :find ./**/
+nnoremap <leader>n :Ex<cr>
 
 
 "" CHANGE SETTINGS ON THE FLY:
