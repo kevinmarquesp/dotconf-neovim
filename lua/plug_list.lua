@@ -7,5 +7,6 @@ table.insert(plug_list, require("user_plugins.p_emmet").get())
 table.insert(plug_list, require("user_plugins.c_treesitter").get())
 table.insert(plug_list, require("user_plugins.p_telescope").get())
 table.insert(plug_list, require("user_plugins.p_cmp").get())
+table.insert(plug_list, require("user_plugins.c_lspconfig").get())
 
 return plug_list
