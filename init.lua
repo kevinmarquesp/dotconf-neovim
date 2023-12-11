@@ -1,6 +1,6 @@
 local function load_user_profile()
-    local NEOVIM_CONFIG_PATH = os.getenv("HOME").."/.config/nvim"
-    local SHARED_CONFIG_PATH = NEOVIM_CONFIG_PATH.."/shared"
+    local NVIM_CONFIG_DIR = os.getenv("HOME").."/.config/nvim"
+    local SHARED_CONFIG_PATH = NVIM_CONFIG_DIR.."/shared"
 
     local SHARED_CONFIG_FILES = {
         "keymaps.vim",
@@ -20,8 +20,14 @@ local function load_plugin_manager()
 
     PlugManager.install_manager()
     PlugManager.fetch_plugins()
-    -- PlugManager.after_config()
+    PlugManager.after_config()
+end
+
+local function load_user_commands()
+    local UserCommands = require("user_commands")
+    UserCommands:load()
 end
 
 load_user_profile()
 load_plugin_manager()
+load_user_commands()

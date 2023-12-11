@@ -29,6 +29,7 @@ function PlugManager.fetch_plugins()
 end
 
 function PlugManager.after_config()
+    require("plug_after")
 end
 
 return PlugManager
