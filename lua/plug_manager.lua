@@ -24,8 +24,8 @@ function PlugManager.fetch_plugins()
         return
     end
 
-    -- local plugins = require("plug_list")
-    -- lazy.setup(plugins)
+    local plugins = require("plug_list")
+    lazy.setup(plugins)
 end
 
 function PlugManager.after_config()
