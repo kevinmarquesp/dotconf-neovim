@@ -67,8 +67,9 @@ endif
 "" FINDING FILES:
 "" ----------------------------------------------------------------------------
 
-nnoremap <c-p> :find ./**/
+nnoremap <c-p> :find ./**/*
 nnoremap <leader>n :Ex<cr>
+autocmd FileType netrw nnoremap <buffer> <leader>n <c-6>
 
 
 "" CHANGE SETTINGS ON THE FLY:
