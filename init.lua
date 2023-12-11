@@ -15,4 +15,13 @@ local function load_user_profile()
     end
 end
 
+local function load_plugin_manager()
+    local PlugManager = require("plug_manager")
+
+    PlugManager.install_manager()
+    PlugManager.fetch_plugins()
+    -- PlugManager.after_config()
+end
+
 load_user_profile()
+load_plugin_manager()
