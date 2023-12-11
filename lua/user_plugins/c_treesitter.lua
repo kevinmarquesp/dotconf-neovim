@@ -11,7 +11,8 @@ function PlugTreesitter.get()
 
         dependencies = {
             "tpope/vim-commentary",
-            "windwp/nvim-autopairs"
+            "windwp/nvim-autopairs",
+            "lewis6991/gitsigns.nvim",
         },
 
         config = function()
@@ -26,6 +27,13 @@ function PlugTreesitter.get()
             status_ok, nvim_autopairs = pcall(require, "nvim-autopairs")
             if not status_ok then
                 print("autopairs :: couldn't find this plugin")
+                return
+            end
+
+            local gitsigns
+            status_ok, gitsigns = pcall(require, "gitsigns")
+            if not status_ok then
+                print("gitsigns :: couldn't find this plugin")
                 return
             end
 
@@ -49,6 +57,18 @@ function PlugTreesitter.get()
             -- Configurações do autopairs
             -- ----------------------------------------------------------------
             nvim_autopairs.setup()
+
+            -- Configurações do gitsigns
+            -- ----------------------------------------------------------------
+            gitsigns.setup({
+                signs = {
+                    add          = { hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
+                    change       = { hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
+                    delete       = { hl = 'GitSignsDelete', text = '', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+                    topdelete    = { hl = 'GitSignsDelete', text = '', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
+                    changedelete = { hl = 'GitSignsChange', text = '', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' }
+                }
+            })
         end,
     }
 end

@@ -9,8 +9,50 @@ function PlugNord.get()
     return {
         "shaunsingh/nord.nvim",
 
+        dependencies = {
+            "lukas-reineke/indent-blankline.nvim",
+            "akinsho/bufferline.nvim",
+        },
+
         config = function()
             require('nord').set()
+            require("ibl").setup({})
+
+            -- Configurações do bufferline
+            -- ----------------------------------------------------------------
+            vim.schedule(function()
+                require("bufferline").setup({
+                    options = {
+                        max_prefix_length = 20, -- prefix used when a buffer is de-duplicated
+                        max_name_length = 20,
+
+                        -- can also be a table containing 2 custom separators
+                        -- [focused and unfocused]. eg: { '|', '|' }
+
+                        separator_style = 'thin',
+                        always_show_bufferline = true,
+                        enforce_regular_tabs = true,
+                        show_buffer_close_icons = false,
+                        show_tab_indicators = true,
+                        show_buffer_icons = true, -- disable filetype icons for buffers
+                        show_close_icon = false,
+
+                        diagnostics_indicator = function(count)
+                            return '['..count..']'
+                        end,
+
+                        offsets = {{
+                            filetype = 'NvimTree',
+                            text = 'File Explorer',
+                        }},
+
+                        indicator = {
+                            style = 'icon',
+                            icon = ' ',
+                        },
+                    },
+                })
+            end)
         end
     }
 end
