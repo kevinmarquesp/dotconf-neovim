@@ -9,6 +9,9 @@ vnoremap <c-l> <esc>
 nnoremap j gj
 nnoremap k gk
 nnoremap Y yg$
+nnoremap J mzJ"z
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 " TODO :- make it only available on plain vim
 inoremap / /<c-x><c-f><c-p>
@@ -84,7 +87,9 @@ nnoremap <leader>gg mzgg=G"z
 
 nnoremap <leader><leader> @
 
-nnoremap <f1> :%s/
+nnoremap <f2> :%s/<c-r><c-w>//g<c-r><c-r><left><left><left>
+
+xnoremap <leader>p "_dP
 
 nnoremap <leader>1 :set shiftwidth=2 tabstop=2<cr>
 nnoremap <leader>2 :set shiftwidth=4 tabstop=4<cr>
@@ -94,3 +99,6 @@ nnoremap <leader>. A.<esc>
 nnoremap <leader>, A,<esc>
 nnoremap <leader>; A;<esc>
 nnoremap <leader>: A:<esc>
+
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv

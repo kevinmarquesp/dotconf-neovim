@@ -14,6 +14,7 @@ set path-=**/node_modules/**
 set timeoutlen=200
 set mouse=a
 set nocompatible
+set updatetime=50
 
 set hidden confirm showmode
 set autoread
@@ -35,6 +36,9 @@ if !has("nvim")
     au BufWinEnter *.ino set ft=cpp
 endif
 
+set noswapfile nobackup
+set undofile undodir=~/.vim/undo_dir
+
 
 "" EDITOR INTERFACE SETTINGS:
 "" ----------------------------------------------------------------------------
@@ -47,6 +51,8 @@ set colorcolumn=80
 
 colorscheme pablo
 set fcs=eob:\ 
+
+set hlsearch incsearch
 
 " customizing NETRW interface
 let g:netrw_liststyle=3
