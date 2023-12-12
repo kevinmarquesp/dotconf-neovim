@@ -1,18 +1,43 @@
---- {{ descrição curta sobre esse plugin }}
-local PlugName = {}
-
---- Essa função deve retornar uma tabela compatível com o lazy.nvim para ele
---- usar essas informações para baixar o plugin na sua máquina
---- -- Go back and update ~/.config/nvim/lua/plug_list.lua
-function PlugName.get()
-    return {
-    }
+--- Função básica de configuração, o que você colocaria no plug.config() deve
+--- estar aqui; o famosos require("plug_name").setup()
+local function plug_setup()
 end
 
---- Configurações e customizações que são mais próximas do usuário final, como
---- como keymapings ou coisa parecida
---- -- Go back and update ~/.config/nvim/lua/plug_after.lua
-function PlugName.after()
+--- Essa função serve para você separar a configuração do plugin de algumas
+--- customizações e detalhes que estão mais próximos do usuário final, como
+--- keymaps e similares
+local function user_setup()
 end
 
-return PlugName
+--- Helper function, ela deve ser usada no dentro de plug.config() para
+--- garantir que os requires vão funcionar nas funções de configuração, tanto
+--- pro plugin quanto pro usuário
+local function verify_require(modules)
+    for _, module in pairs(modules) do
+        local status_ok, _ = pcall(require, module)
+        if not status_ok then
+            return false, module.." :: couldn't require this plugin"
+        end
+    end
+
+    return true, nil
+end
+
+-- {{Descrição básica e breve do plugin/coleção de plugins}}
+return {
+    "{{repo}}",
+
+    dependencies = {
+        "{{repo_alt}}",
+    },
+
+    config = function()
+        local status_ok, info = verify_require({ "{{module}}" })
+        if not status_ok then
+            print(info)
+        end
+
+        plug_setup()
+        vim.schedule(user_setup)
+    end,
+}
