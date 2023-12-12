@@ -16,7 +16,6 @@ local function load_plugin_manager()
 
     PlugManager.install_manager()
     PlugManager.fetch_plugins()
-    PlugManager.after_config()
 end
 
 local function load_user_commands()

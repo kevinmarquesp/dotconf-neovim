@@ -28,8 +28,4 @@ function PlugManager.fetch_plugins()
     lazy.setup(plugins)
 end
 
-function PlugManager.after_config()
-    require("plug_after")
-end
-
 return PlugManager
