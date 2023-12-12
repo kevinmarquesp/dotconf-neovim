@@ -9,5 +9,6 @@ table.insert(plug_list, require('plugins.c_editor_interface'))
 table.insert(plug_list, require('plugins.p_telescope'))
 table.insert(plug_list, require('plugins.c_code_helpers'))
 table.insert(plug_list, require('plugins.p_cmp'))
+table.insert(plug_list, require('plugins.c_code_lspconfig'))
 
 return plug_list
