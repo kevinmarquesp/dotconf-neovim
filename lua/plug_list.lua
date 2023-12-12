@@ -8,5 +8,6 @@ table.insert(plug_list, require('plugins.c_editor_style'))
 table.insert(plug_list, require('plugins.c_editor_interface'))
 table.insert(plug_list, require('plugins.p_telescope'))
 table.insert(plug_list, require('plugins.c_code_helpers'))
+table.insert(plug_list, require('plugins.p_cmp'))
 
 return plug_list
