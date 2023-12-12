@@ -35,6 +35,7 @@ return {
         local status_ok, info = verify_require({ "{{module}}" })
         if not status_ok then
             print(info)
+            return
         end
 
         plug_setup()
