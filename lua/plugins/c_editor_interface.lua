@@ -33,9 +33,7 @@ local function plug_setup()
 
     -- Configurações do BUFFERLINE
     -- ------------------------------------------------------------------------
-    require("bufferline").setup({
-        options = { separator_style = {" ", " "} }
-    })
+    require("bufferline").setup({})
     require("scope").setup()
 
     -- Configurações do GITSIGNS
