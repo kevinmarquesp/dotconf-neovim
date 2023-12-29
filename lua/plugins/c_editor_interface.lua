@@ -76,7 +76,7 @@ return {
 
     config = function()
         local status_ok, info = verify_require({ "lualine", "bufferline",
-        "scope", "gitsigns" })
+            "scope", "gitsigns" })
         if not status_ok then
             print(info)
             return
