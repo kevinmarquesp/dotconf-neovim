@@ -31,6 +31,19 @@ end
 --- customizações e detalhes que estão mais próximos do usuário final, como
 --- keymaps e similares
 local function user_setup()
+    local opts = { remap = false }
+    local map = vim.keymap.set
+
+    map("n", "gd",           vim.lsp.buf.definition,       opts)
+    map("n", "K",            vim.lsp.buf.hover,            opts)
+    map("n", "]d",           vim.diagnostic.goto_next,     opts)
+    map("n", "[d",           vim.diagnostic.goto_prev,     opts)
+    --map("i", "<c-h>",        vim.lsp.buf.signature_help,   opts)
+    map("n", "<leader>vca",  vim.lsp.buf.code_action,      opts)
+    map("n", "<leader><f3>", vim.lsp.buf.references,       opts)
+    map("n", "<leader><f2>", vim.lsp.buf.rename,           opts)
+    map("n", "<leader>d",    vim.lsp.buf.workspace_symbol, opts)
+    map("n", "<c-k>",        vim.diagnostic.open_float,    opts)
 end
 
 --- Helper function, ela deve ser usada no dentro de plug.config() para
