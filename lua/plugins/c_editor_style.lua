@@ -2,7 +2,6 @@
 --- estar aqui; o famosos require("plug_name").setup()
 local function plug_setup()
     require("nord").set()
-    require("ibl").setup({})
 
     vim.g.nord_contrast = true
     vim.g.nord_borders = true
@@ -42,12 +41,11 @@ return {
     "shaunsingh/nord.nvim",
 
     dependencies = {
-        "lukas-reineke/indent-blankline.nvim",
         "akinsho/bufferline.nvim",
     },
 
     config = function()
-        local status_ok, info = verify_require({ "nord", "ibl" })
+        local status_ok, info = verify_require({ "nord" })
         if not status_ok then
             print(info)
             return
