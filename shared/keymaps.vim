@@ -14,15 +14,17 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " TODO :- make it only available on plain vim
-inoremap / /<c-x><c-f><c-p>
-inoremap . .<c-n><c-p>
-inoremap ( (<c-n><c-p>
-inoremap [ [<c-n><c-p>
-inoremap { {<c-n><c-p>
-inoremap , ,<c-n><c-p>
-inoremap ) )<c-n><c-p>
-inoremap ] ]<c-n><c-p>
-inoremap } }<c-n><c-p>
+if !has("nvim")
+    inoremap / /<c-x><c-f><c-p>
+    inoremap . .<c-n><c-p>
+    inoremap ( (<c-n><c-p>
+    inoremap [ [<c-n><c-p>
+    inoremap { {<c-n><c-p>
+    inoremap , ,<c-n><c-p>
+    inoremap ) )<c-n><c-p>
+    inoremap ] ]<c-n><c-p>
+    inoremap } }<c-n><c-p>
+endif
 
 
 "" WINDOWS TABS AND BUFFERS:
