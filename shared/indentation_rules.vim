@@ -6,5 +6,7 @@ au BufWinEnter *.html setl shiftwidth=2 tabstop=2
 au BufWinEnter *.cpp setl shiftwidth=2 tabstop=2
 au BufWinEnter *.ino setl shiftwidth=2 tabstop=2
 au BufWinEnter *.c setl shiftwidth=2 tabstop=2
+au BufWinEnter *.ex setl shiftwidth=2 tabstop=2 expandtab
+au BufWinEnter *.exs setl shiftwidth=2 tabstop=2 expandtab
 
 au BufWinEnter *.lua setl shiftwidth=3 tabstop=3 expandtab
