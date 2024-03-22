@@ -5,6 +5,7 @@ let mapleader="\<space>"
 
 inoremap <c-l> <esc>
 vnoremap <c-l> <esc>
+snoremap <c-l> <esc>
 
 nnoremap j gj
 nnoremap k gk
