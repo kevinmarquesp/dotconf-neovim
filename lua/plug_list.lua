@@ -2,6 +2,7 @@ local plug_list = {}
 
 table.insert(plug_list, "kyazdani42/nvim-web-devicons")
 table.insert(plug_list, "tpope/vim-surround")
+table.insert(plug_list, "andweeb/presence.nvim")
 
 table.insert(plug_list, require('plugins.c_editor_style'))
 table.insert(plug_list, require('plugins.c_editor_interface'))
