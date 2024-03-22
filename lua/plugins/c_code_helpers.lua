@@ -5,6 +5,11 @@ local function plug_setup()
     require("nvim-treesitter.configs").setup({
         sync_install = true,
 
+        ensure_installed = {
+            "lua", "vim", "bash", "python", "elixir", "javascript",
+            "typescript", "c", "cpp", "go"
+        },
+
         highlight = {
             enable = true,
             disable = { 'html', 'vim', 'vue' },
