@@ -49,6 +49,7 @@ set nowrap cursorline
 set wildmenu
 set colorcolumn=80
 
+syntax on
 colorscheme pablo
 set fcs=eob:\ 
 
